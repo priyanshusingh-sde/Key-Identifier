@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Recogniser</title>
+    <!-- Favicon :  -->
+    <link rel="icon" href="https://img.icons8.com/?size=100&id=49445&format=png&color=000000">
+</head>
+<body>
+    <h1 id="device"></h1>
+    <p>" Press Any Key "</p>
+    
+
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(to top, rgb(0, 0, 0), rgb(14, 13, 13), rgb(53, 5, 37));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1{
+            text-transform: capitalize;
+            color: white;
+            font-size: 10vw;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 800;
+            user-select: none;
+            letter-spacing: -18px;
+        }
+         p{
+        color: rgba(255,255,255,0.7);
+        font-size: 1.2em;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        letter-spacing: 4px;
+        margin-top: -20px;
+        position: fixed;
+        font-size: x-large;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+        
+    </style>
+
+    <script>
+        let h1 = document.querySelector("h1");
+        let bd = document.querySelector("body")
+        window.addEventListener("keydown",function(dets){
+            dets.preventDefault();
+            h1.style.visibility = "visible";
+
+            if (dets.key===" "){    
+                         
+                h1.textContent="SPACE";
+                
+                bd.style.background =
+                "linear-gradient(to top, rgb(0, 0, 0), rgb(71, 0, 65), rgb(187, 6, 133))";
+
+                setTimeout(() => {
+
+                bd.style.background =
+                "linear-gradient(to top, rgb(0, 0, 0), rgb(14, 13, 13), rgb(53, 5, 37))";
+
+                }, 200);
+            }
+            else if (dets.key==="CapsLock"){
+                h1.textContent="CapsLock";
+                
+                bd.style.background =
+                "linear-gradient(to top, rgb(0, 0, 0), rgb(92, 2, 77), rgb(148, 1, 153))";
+
+                setTimeout(() => {
+
+                bd.style.background =
+                "linear-gradient(to top, rgb(0, 0, 0), rgb(14, 13, 13), rgb(53, 5, 37))";
+
+                }, 200);
+            }
+            else{
+                h1.textContent=dets.key; 
+            }
+
+            setTimeout(() => {
+        h1.style.visibility = "hidden";
+    }, 300);
+
+        });
+    </script>
+    
+</body>
+</html>
